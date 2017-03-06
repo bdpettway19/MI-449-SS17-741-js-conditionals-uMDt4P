@@ -13,12 +13,23 @@ gameStart.addEventListener('click', function () {
       window.alert('Congratulations, you made it past the bear and through the forest') }
       else {
       window.alert('Unfortunately you were mauled by the bear and did not survive, try again!') }
-    } else if (decision === 'run away') {
+    }
+    else if (decision === 'run away') {
       window.alert('I knew you were a coward, but at least you are alive.') }
     else if (decision === 'climb up a tree') {
-      window.alert('That was not a smart decision. Good luck getting down')
-    } else { window.alert('You did not make the right choice so the bear mauled you anyways.') }
-  } else if (enterForest === 'right path') {
+      var number = window.prompt('You\'re stuck in a tree, and you can\'t get down. Pick a number between 1 and 10, and don\'t make a sound.')
+      number = parseInt(number)
+      if (number > 5 ) {
+        window.alert('Congratulations, you picked a good number. The bear left and you were able to get down safe.')
+      }
+    else {
+        window.alert('Unfortunately that number is too low, which causes you to slip out the tree. The bear then devours you whole.')
+      }
+    } 
+    else {
+        window.alert('You did not make the right choice so the bear mauled you anyways.') }
+    }
+  else if (enterForest === 'right path') {
     window.alert('You made it through the forest, congratulations! Now you approach a cabin.')
     var enterCabin = window.prompt('ring the door bell, knock on the door or do both?')
     enterCabin = enterCabin.toLowerCase().trim()
@@ -29,11 +40,14 @@ gameStart.addEventListener('click', function () {
     var truthBear = window.prompt('If you saw the bear and killed it then you have to respond by saying yes or you got it. If not, then repond by saying something else.')
     truthBear = truthBear.toLowerCase().trim()
       if (truthBear === 'yes' || truthBear === 'you got it') {
-      window.alert('The man admires your courage and invites you in for a drink.') }
+      window.alert('The man admires your courage and invites you in for a drink.')
+        }
       else {
-        alert('Go away!')
+            alert('Go away!')
+            }
       }
     }
-  } else {
-        alert('Shame on you. Too scared to make a decision!') }
+  else {
+        alert('Shame on you. Too scared to make a decision!')
+        }
 })
